@@ -1,0 +1,26 @@
+header {
+}
+html {
+  font-family: "Nunito Sans";
+  font-size: 16px;
+}
+
+footer {
+  background-color: rgb(62, 6, 83);
+  color: #ffffff;
+  padding-top: 15px;
+  padding-bottom: 25px;
+}
+svg {
+  fill: #ffffff;
+  width: 1.8rem;
+  margin-right: 1em;
+  transition: color;
+}
+a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+svg:hover {
+  fill: rgba(226, 224, 226, 0.767);
+}
