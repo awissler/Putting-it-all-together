@@ -3,12 +3,12 @@
 Final assignment for INFX 512 A, Spring 2018, UW iSchool
 
 ```
-Website details/inspiration/etc
+https://awissler.github.io/Putting-it-all-together/
 ```
 
 ## Built With
 
-* https://quotesondesign.com/api-v4-0/
+- https://quotesondesign.com/api-v4-0/
 
 # Author
 
