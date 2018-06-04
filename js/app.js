@@ -1,3 +1,5 @@
+//This website was working earlier; I cannot for the life of me figure out how it suddenly stopped working or how to fix it. I am so, so sorry to turn in something so incomplete, especially at the end of the quarter.
+
 const randomQuoteAPI =
   "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
 
@@ -34,9 +36,11 @@ function renderRandomQuote(data) {
     if (content === undefined) {
       return false;
     }
+    var popup = L.popup();
     var marker = L.marker();
 
     function onMapClick(e) {
+      popup.setLatLng(e.latlng);
       marker
         .bindPopup("<i>" + content + "</i>" + "<b>" + title + "</b>")
         .openPopup();
