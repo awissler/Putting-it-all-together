@@ -8,7 +8,7 @@ Website details/inspiration/etc
 
 ## Built With
 
-* https://github.com/toddmotto/public-apis
+* https://quotesondesign.com/api-v4-0/
 
 # Author
 

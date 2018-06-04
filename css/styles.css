@@ -1,26 +1,78 @@
 header {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 html {
-  font-family: "Nunito Sans";
+  font-family: "Raleway";
   font-size: 16px;
 }
-
+* {
+  box-sizing: border-box;
+}
+h1 {
+  font-family: "Lobster";
+  font-size: 5rem;
+  color: #6b0b8e;
+  margin: 3rem;
+}
+h2 {
+  margin-bottom: 2rem;
+}
+main div.container {
+  padding-bottom: 2rem;
+}
 footer {
-  background-color: rgb(62, 6, 83);
+  background: linear-gradient(to right, #6b0b8e, #3e0653);
   color: #ffffff;
-  padding-top: 15px;
-  padding-bottom: 25px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+img {
+  height: 2rem;
+  margin-left: 0.25rem;
 }
 svg {
-  fill: #ffffff;
-  width: 1.8rem;
-  margin-right: 1em;
+  fill: #737373;
+  width: 1.5rem;
+  margin-right: 0.7rem;
+  margin-bottom: -0.4rem;
   transition: color;
 }
 a:link {
   text-decoration: none;
+  font-family: "Lobster";
+  font-size: 1.3rem;
   color: #ffffff;
 }
+a:visited {
+  color: #737373;
+}
+a:hover {
+  color: #fab938;
+}
 svg:hover {
-  fill: rgba(226, 224, 226, 0.767);
+  fill: #fab938;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+  header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }
