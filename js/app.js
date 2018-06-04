@@ -1,5 +1,5 @@
 const randomQuoteAPI =
-  "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+  "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
 
 const mymap = L.map("mapid").setView([47.6553, -122.3051], 13);
 
