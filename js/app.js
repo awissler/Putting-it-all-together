@@ -1,56 +1,37 @@
-//This website was working earlier; I cannot for the life of me figure out how it suddenly stopped working or how to fix it. I am so, so sorry to turn in something so incomplete, especially at the end of the quarter.
-
-const randomQuoteAPI =
-  "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
-
-const mymap = L.map("mapid").setView([47.6553, -122.3051], 13);
-
-L.tileLayer(
-  "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
-  {
-    attribution:
-      'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 20,
-    id: "mapbox.streets",
-    accessToken:
-      "pk.eyJ1Ijoibmlja2RlbmFyZGlzIiwiYSI6ImNqaGRla2pjMjBvYXgzNm13Yzc3aGIwM3kifQ.G2Tr-B7ppCNdj6xuM0Qc5A"
-  }
-).addTo(mymap);
-
-function parseAsJSON(response) {
-  return response.json();
-}
-
-function handleError(err) {
-  console.error(err);
-  alert(err.message);
-}
-
-function renderRandomQuote(data) {
-  for (var i = 0; i < data.length; i++) {
-    var title = data[i].title;
-    if (title === undefined) {
-      return false;
-    }
-    var content = data[i].content;
-    if (content === undefined) {
-      return false;
-    }
-    var popup = L.popup();
-    var marker = L.marker();
-
-    function onMapClick(e) {
-      popup.setLatLng(e.latlng);
-      marker
-        .bindPopup("<i>" + content + "</i>" + "<b>" + title + "</b>")
-        .openPopup();
-    }
-
-    mymap.on("click", onMapClick);
+function renderRandomQuote(random_quote) {
+  var tbody = document.querySelector("tbody");
+  for (var idx = 0; idx < QUOTES.length; idx++) {
+    var quote = QUOTES[idx];
+    tbody.appendChild(renderQuote(quote));
   }
 }
 
-fetch(randomQuoteAPI)
-  .then(parseAsJSON)
-  .then(renderRandomQuote)
-  .catch(handleError);
+function renderQuote(quote) {
+  var tr = document.createElement("tr");
+  tr.appendChild(renderQuoteProp(quote.title));
+  tr.appendChild(renderQuoteProp(quote.content));
+  return tr;
+}
+
+function renderQuoteProp(content) {
+  var td = document.createElement("td");
+  td.textContent = content;
+  return td;
+}
+
+var quoteOutput = document.getElementById("quote-output");
+var generateButton = document.getElementById("generate");
+
+generateButton.addEventListener("click", function() {
+  switch (quoteOutput) {
+    case "pulse":
+      animateElem.classList.add("pulse");
+      animateElem.addEventListener(
+        "animationend",
+        function() {
+          animateElem.classList.remove("pulse");
+        },
+        { once: true }
+      );
+  }
+});

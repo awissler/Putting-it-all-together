@@ -13,13 +13,19 @@ h1 {
   font-family: "Lobster";
   font-size: 5rem;
   color: #6b0b8e;
-  margin: 3rem;
+  margin: 2rem;
 }
 h2 {
   margin-bottom: 2rem;
 }
-main div.container {
-  padding-bottom: 2rem;
+.btn {
+  display: block;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 footer {
   background: linear-gradient(to right, #6b0b8e, #3e0653);
