@@ -23,5 +23,7 @@ var quoteOutput = document.getElementById("quote-output");
 var generateButton = document.getElementById("generate");
 
 generateButton.addEventListener("click", function() {
+  quoteOutput.textContent = "";
+  QUOTES.length = 1;
   quoteOutput.textContent = renderRandomQuote(QUOTES);
 });
