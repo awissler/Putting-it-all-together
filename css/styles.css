@@ -27,8 +27,9 @@ h2 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-span {
-  display: none;
+.output {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 footer {
   background: linear-gradient(to right, #6b0b8e, #3e0653);
