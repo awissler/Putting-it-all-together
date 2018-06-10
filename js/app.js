@@ -1,15 +1,15 @@
-function renderRandomQuote(random_quote) {
+function renderRandomQuote(QUOTES) {
   var tbody = document.querySelector("tbody");
-  for (var idx = 0; idx < QUOTES.length; idx++) {
-    var quote = QUOTES[idx];
+  for (var i = 0; i < QUOTES.length; i++) {
+    var quote = QUOTES[i];
     tbody.appendChild(renderQuote(quote));
   }
+  return tbody;
 }
 
 function renderQuote(quote) {
   var tr = document.createElement("tr");
-  tr.appendChild(renderQuoteProp(quote.title));
-  tr.appendChild(renderQuoteProp(quote.content));
+  tr.appendChild(renderQuoteProp(quote.content + " ~" + quote.title));
   return tr;
 }
 
@@ -23,15 +23,5 @@ var quoteOutput = document.getElementById("quote-output");
 var generateButton = document.getElementById("generate");
 
 generateButton.addEventListener("click", function() {
-  switch (quoteOutput) {
-    case "pulse":
-      animateElem.classList.add("pulse");
-      animateElem.addEventListener(
-        "animationend",
-        function() {
-          animateElem.classList.remove("pulse");
-        },
-        { once: true }
-      );
-  }
+  quoteOutput.textContent = renderRandomQuote(QUOTES);
 });
